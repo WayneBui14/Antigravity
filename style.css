@@ -598,25 +598,26 @@ button:hover {
         left: 50% !important;
         transform: translateX(-50%) translateY(-50%) !important;
         -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) !important;
-        width: 85% !important;
-        max-width: 300px !important;
+        width: 90% !important;
+        max-width: 350px !important;
         height: auto !important;
-        max-height: 65vh !important;
+        max-height: 70vh !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
-        margin-bottom: 15px;
         /* Force hardware acceleration */
         will-change: transform;
+        padding: 25px 20px !important;
     }
 
     .text p {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 1.05rem;
+        line-height: 1.65;
     }
 
     .sticker {
-        width: 50px;
-        margin-bottom: 10px;
+        width: 55px;
+        height: auto;
+        margin-bottom: 12px;
     }
 
     /* Click hint smaller */
@@ -722,9 +723,10 @@ button:hover {
     }
 
     .envelope.open .letter {
-        width: 88%;
-        max-width: 300px;
-        max-height: 65vh;
+        width: 90%;
+        max-width: 340px;
+        max-height: 68vh;
+        padding: 23px 18px !important;
     }
 
     .text strong {
@@ -732,12 +734,13 @@ button:hover {
     }
 
     .text p {
-        font-size: 0.95rem;
-        line-height: 1.55;
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
     .sticker {
-        width: 45px;
+        width: 50px;
+        height: auto;
     }
 
     .click-hint {
