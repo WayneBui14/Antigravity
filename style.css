@@ -24,14 +24,24 @@
     -webkit-touch-callout: none;
 }
 
-body {
+html {
     /* Fix for Safari's 100vh issues */
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+    height: 100%;
+    height: -webkit-fill-available;
+    /* Prevent Safari from auto-adjusting font sizes */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
-html {
-    height: -webkit-fill-available;
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    /* Prevent Safari text auto-sizing */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Improve font rendering on iOS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -49,6 +59,10 @@ body {
     background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
     overflow: hidden;
     font-family: 'Inter', sans-serif;
+    /* Prevent pull-to-refresh and overscroll on iOS */
+    overscroll-behavior: none;
+    position: fixed;
+    /* Hide Safari address bar */
 }
 
 .container {
@@ -92,6 +106,9 @@ body {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     touch-action: manipulation;
+    /* Increase touch target size for mobile */
+    padding: 10px;
+    margin: -10px;
 }
 
 .star:hover {
@@ -146,6 +163,8 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: slideIn 0.4s ease;
+    /* Prevent iOS Safari zoom on double tap */
+    touch-action: manipulation;
 }
 
 .close-modal {
@@ -253,6 +272,9 @@ body {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
+    /* Improve touch interaction */
+    touch-action: manipulation;
+    cursor: pointer;
 }
 
 /* Back of Envelope */
@@ -353,6 +375,12 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.6s 0.4s ease;
     border-radius: 4px;
+    /* Enable hardware acceleration */
+    will-change: transform;
+    -webkit-transform: translateX(-50%) translateY(0) translateZ(0);
+    /* Improve touch interaction */
+    touch-action: manipulation;
+    cursor: pointer;
 }
 
 /* Hidden Photo Behind Letter */
@@ -394,6 +422,7 @@ body {
 .envelope.open .letter {
     /* Pop out and scale up */
     transform: translateX(-50%) translateY(-50%) scale(1.40);
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(1.40) translateZ(0);
     z-index: 10;
 }
 
@@ -403,6 +432,9 @@ body {
     color: var(--text-color);
     font-size: 0.75rem;
     line-height: 1.2;
+    /* Prevent Safari text auto-sizing */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 .text strong {
@@ -448,6 +480,9 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    /* Prevent iOS Safari zoom on double tap */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button:hover {
@@ -562,6 +597,7 @@ button:hover {
         top: 50% !important;
         left: 50% !important;
         transform: translateX(-50%) translateY(-50%) !important;
+        -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) !important;
         width: 85% !important;
         max-width: 300px !important;
         height: auto !important;
@@ -569,6 +605,8 @@ button:hover {
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
         margin-bottom: 15px;
+        /* Force hardware acceleration */
+        will-change: transform;
     }
 
     .text p {
@@ -860,6 +898,7 @@ button:hover {
     }
 }
 
+
 /* Falling Elements */
 .falling-element {
     position: fixed;
@@ -885,4 +924,39 @@ button:hover {
         transform: translateY(110vh) rotate(360deg) scale(1.1);
         opacity: 0;
     }
+}
+
+/* Music Control */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+#music-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--envelope-dark);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    /* Mobile Safari optimizations */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+#music-btn:hover,
+#music-btn:active {
+    transform: scale(1.1) translateZ(0);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: #fff;
 }
