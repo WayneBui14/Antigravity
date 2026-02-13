@@ -478,6 +478,194 @@ button:hover {
     }
 }
 
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+
+    /* Container adjustments */
+    .container {
+        padding-top: 30px;
+    }
+
+    /* Envelope smaller on mobile */
+    .envelope {
+        width: 280px;
+        height: 200px;
+    }
+
+    /* Letter adjustments */
+    .letter {
+        width: 260px;
+        padding: 25px 20px;
+    }
+
+    .envelope.open .letter {
+        transform: translateX(-50%) translateY(-50%) scale(1.1);
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .text strong {
+        font-size: 1.3rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .sticker {
+        width: 60px;
+    }
+
+    /* Click hint smaller */
+    .click-hint {
+        transform: translateX(-150px) rotate(-10deg);
+    }
+
+    .hint-text {
+        font-size: 1.3rem;
+    }
+
+    .arrow-svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateX(-150px) rotate(-10deg) translateY(0);
+        }
+
+        50% {
+            transform: translateX(-150px) rotate(-10deg) translateY(-15px);
+        }
+    }
+
+    /* Second hint */
+    .second-hint {
+        font-size: 0.9rem;
+        bottom: 5%;
+    }
+
+    /* Star hint */
+    .star-hint {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        top: 10px;
+    }
+
+    /* Stars - larger touch targets for mobile */
+    .star {
+        width: 15px;
+        height: 15px;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        padding: 30px 25px;
+        width: 85%;
+    }
+
+    .memory-title {
+        font-size: 1.4rem;
+    }
+
+    .memory-text {
+        font-size: 1rem;
+    }
+
+    .close-modal {
+        font-size: 24px;
+        top: 10px;
+        right: 15px;
+    }
+
+    /* Music button */
+    #music-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    /* Crab smaller on mobile */
+    .crab-container {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* Hidden photo */
+    .hidden-photo {
+        width: 95%;
+    }
+}
+
+/* Extra small mobile devices */
+@media screen and (max-width: 480px) {
+    .envelope {
+        width: 240px;
+        height: 170px;
+    }
+
+    .letter {
+        width: 220px;
+        padding: 20px 15px;
+    }
+
+    .envelope.open .letter {
+        width: 92%;
+    }
+
+    .text strong {
+        font-size: 1.1rem;
+    }
+
+    .text p {
+        font-size: 0.85rem;
+    }
+
+    .click-hint {
+        transform: translateX(-120px) rotate(-10deg);
+    }
+
+    .hint-text {
+        font-size: 1.1rem;
+    }
+
+    .arrow-svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateX(-120px) rotate(-10deg) translateY(0);
+        }
+
+        50% {
+            transform: translateX(-120px) rotate(-10deg) translateY(-12px);
+        }
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+
+    .memory-title {
+        font-size: 1.2rem;
+    }
+
+    .star-hint {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+}
+
 /* Second Hint */
 .second-hint {
     position: absolute;
