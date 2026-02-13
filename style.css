@@ -505,59 +505,69 @@ button:hover {
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
 
+    /* Force container centering */
+    body {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
     /* Container adjustments */
     .container {
         padding-top: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
         min-height: 100vh;
         min-height: -webkit-fill-available;
+        width: 100% !important;
     }
 
-    /* Envelope wrapper centering */
+    /* Envelope wrapper centering - CRITICAL */
     .envelope-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
     }
 
-    /* Envelope smaller on mobile */
+    /* Envelope - force center */
     .envelope {
-        width: 280px;
-        height: 200px;
-        position: relative;
-        left: auto;
-        transform: none;
+        width: 280px !important;
+        height: 200px !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+        transform: none !important;
     }
 
     /* Letter adjustments */
     .letter {
-        width: 260px;
-        padding: 25px 20px;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 250px !important;
+        padding: 20px 15px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        box-sizing: border-box !important;
     }
 
+    /* Letter when open - CRITICAL FIX */
     .envelope.open .letter {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%) scale(1);
-        width: 85%;
-        max-width: 320px;
-        height: auto;
-        max-height: 70vh;
-        overflow-y: auto;
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(-50%) !important;
+        width: 85% !important;
+        max-width: 300px !important;
+        height: auto !important;
+        max-height: 65vh !important;
+        overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
-    }
-
-    .text strong {
-        font-size: 1.4rem;
-        display: block;
         margin-bottom: 15px;
     }
 
